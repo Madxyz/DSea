@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dsea;
+package dsea.controleur;
 
-import dsea.pions.Bateau;
 import dsea.pions.Des;
-import dsea.pions.Pion;
+import dsea.pions.Joueur;
 import dsea.tuiles.Emplacement;
 import dsea.tuiles.Tresor;
 
@@ -52,11 +51,11 @@ public class DSea {
                 System.out.println("A l'emplacement nm°"+ (i+1) +" la tuile a la valeur du trésor est de : "+ emplacement[i][0]);
             }
         }
-        Pion p1 = new Pion();
-        Pion p2 = new Pion();
-        Pion p3 = new Pion();
-        Pion p4 = new Pion();
-        Pion p5 = new Pion();
+        Joueur p1 = new Joueur();
+        Joueur p2 = new Joueur();
+        Joueur p3 = new Joueur();
+        Joueur p4 = new Joueur();
+        Joueur p5 = new Joueur();
         System.out.println(p1.getCouleur());
                 System.out.println(p2.getCouleur());
                         System.out.println(p3.getCouleur());

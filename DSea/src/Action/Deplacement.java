@@ -10,7 +10,6 @@ package Action;
  * @author Madxyz
  */
 public class Deplacement {
-    public int fournirMouvement(Joueur p){
-        p.
-    }
+    /*public int fournirMouvement(Joueur p){
+    }*/
 }

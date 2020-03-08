@@ -5,27 +5,28 @@
  */
 package dsea.pions;
 
+import dsea.tuiles.Tresor;
+import java.util.List;
+
 /**
- * Represente le joueur sur le plateau de jeu
+ * Represente le joueur et son pion sur le plateau de jeu
  * La couleur est assigné aleatoirement 
  * {"Blanc","Noir","Jaune","Bleu","Violet"}
  * 
  * @author Madxyz
  */
-public class Pion {
+public class Joueur {
     private final String tabCouleur[] = {"Blanc","Noir","Jaune","Bleu","Violet"};
     private String couleur;
     private static int index = 0;
     
+    private List<Tresor> sacTresor;
 
-    private boolean occuper;
-    private boolean liberer = false ;
-
-    public Pion(){
+    public Joueur(){
         if(index < 5){
             this.couleur = tabCouleur[index];
             index++;
-        }
+        }else{System.out.println("Vous êtes deja 5 joueurs !");}
     }
         
     //public void donnerCouleur(){}
@@ -36,13 +37,5 @@ public class Pion {
 
     public void setCouleur(String couleur) {
         this.couleur = couleur;
-    }
-
-    public boolean isOccuper() {
-        return occuper;
-    }
-
-    public boolean isLiberer() {
-        return liberer;
-    }      
+    }    
 }

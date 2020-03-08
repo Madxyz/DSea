@@ -5,70 +5,42 @@
  */
 package dsea.tuiles;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 /**
  * Represente les emplacements donc le plateau de jeu
  * il y'a 32 emplacements au debut du jeu
  * Chaques emplacements est rempli d'une tuile
- * Tuile Trésor ou DisqueBlanc quand un trésor est ramasser
- * Si un emplacement est rempli d'une tuile disqueblanc au d'une manche ce
+ * Tuile (Trésor ou DisqueBlanc) quand un trésor est ramasser
+ * Si un emplacement est rempli d'une tuile disqueblanc au debut d'une manche ce
  * derniers est enlevé.
  * @author Madxyz
  */
 public class Emplacement {
-    private static int numero;
-    
+    //emplacement 0 c'est le bateau
+    private static int[] numero =
+    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
+    21,22,23,24,25,26,27,28,29,30,31,32};
+    private int i = 1;
+
     /**
-     * donne un numéro a chaque emplacement crée
-     * maximum 32 emplacements
+     * 
      */
-    public Emplacement(){
-        if(this.numero < 33){numero++;}
+    public Emplacement(){}
+
+    public void donnerNumeroPlace(Tuile tuile){
+        tuile.setPosition(numero[i]);
+        if(this.i < 33){
+            i++;
+        }
     }
 
-    public int getNumero() {
+    public static int[] getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public static void setNumero(int[] numero) {
+        Emplacement.numero = numero;
     }
-    
-    //test
-    /*
-    public static void main(String[] args) {
-        // TODO code application logic here
-        int[][] emplacement = new int[32][1];
-        Tresor t = new Tresor();
-        
-        for (int i=0 ; i<32; i++){
-            //cree les emplacements
-            //Emplacement e = new Emplacement();
-            //emplacement[i][0]= e.getNumero();
-            
-            //met des tuiles trésors en fonction du niveau 
-            // 1 : dans les 8 premiers emplacements
-            // 2 : dans les 8 deuxiemes emplacements
-            // 3 : dans les 8 troisiémes emplacements
-            // 4 : dans les 8 derniers emplacements
-            if ( i < 8 ){
-                emplacement[i][0] = t.donnerValeur(1);
-                System.out.println("A l'emplacement nm°"+ (i+1) +" la tuile la valeur du trésor est de : "+ emplacement[i][0]);
-            }
-            
-            if (i > 7 && i < 16){
-                emplacement[i][0] = t.donnerValeur(2);
-                System.out.println("A l'emplacement nm°"+ (i+1) +" la tuile la valeur du trésor est de : "+ emplacement[i][0]);
-            }
-            
-            if (i > 15 && i < 24){
-                emplacement[i][0] = t.donnerValeur(3);
-                System.out.println("A l'emplacement nm°"+ (i+1) +" la tuile la valeur du trésor est de : "+ emplacement[i][0]);
-            }
-            
-            if (i > 23 && i < 32){
-                emplacement[i][0] = t.donnerValeur(4);
-                System.out.println("A l'emplacement nm°"+ (i+1) +" la tuile la valeur du trésor est de : "+ emplacement[i][0]);
-            }
-        }
-    }*/    
 }

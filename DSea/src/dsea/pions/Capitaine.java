@@ -6,20 +6,33 @@
 package dsea.pions;
 
 /**
- * Bateau représente l'oxygène disponible aux joueurs 
+ * 
+ * Capitaine représente l'oxygène disponible aux joueurs 
  * Il est initialisé à 25 
  * L'oxygène est consommé au début du tour de chaques joueurs 
  * -1 oxygène par trésor porté par le joueur au début de son tour 
  * 
+ * Compteur de manche
+ * max 3
+ * 
  * @author Madxyz
  */
-public class Bateau {
-    private int oxygene;
+public class Capitaine {
+    private int mancheActuel = 0;
+    private int oxygene = 25;
     
-    public Bateau(){
-        this.oxygene = 25;
+    public Capitaine(){
     }
 
+        
+    /**
+     * méthode a appeler en debut de chaque manche.
+     * incremente de un le compteur de manche.
+     */
+    public void ajouterUneManche(){
+        mancheActuel++;
+    }
+    
     /**
      * L'oxygene est consommé au debut du tour
      * le nombre consommé depend du nombre de trésor porté par le joueur actif
@@ -40,11 +53,19 @@ public class Bateau {
     public void setOxygene(int oxygene) {
         this.oxygene = oxygene;
     }
+
+    public int getManche() {
+        return mancheActuel;
+    }
+
+    public void setManche(int manche) {
+        this.mancheActuel = manche;
+    }
     
-    //test
-    /*    
+    //test 
+    /*
     public static void main(String[] args){
-        Bateau b = new Bateau();
+        Capitaine b = new Capitaine();
         System.out.println(b.oxygene);
         b.fournirOxygene(5);
         System.out.println(b.oxygene);

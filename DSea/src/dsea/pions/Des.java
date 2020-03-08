@@ -18,6 +18,7 @@ import java.util.Random;
  */
 public class Des {
     Random alea = new Random();
+    private int sommeResultat ;
     
     /**
      * represente un lancer de 2 dés
@@ -32,17 +33,35 @@ public class Des {
         resultat[0] =alea.ints(1,(3+1)).findFirst().getAsInt();
         resultat[1] =alea.ints(1,(3+1)).findFirst().getAsInt();
         
+        this.sommeResultat = resultat[0]+resultat[1];
         return resultat;
     }
-        
+
+    
+    public Random getAlea() {
+        return alea;
+    }
+
+    public int getSommeResultat() {
+        return sommeResultat;
+    }
+    
+    public void setAlea(Random alea) {
+        this.alea = alea;
+    }
+
+    public void setSommeResultat(int sommeResultat) {
+        this.sommeResultat = sommeResultat;
+    }
+            
     //test
     /*
     public static void main(String[] args){
         Des x = new Des();
        
         for (int i=0; i<200;i++){
-        int[] j = x.lancerDes();
-        System.out.println("["+j[0]+"]  ["+ j[1]+"]");
+            int[] j = x.lancerDes();
+            System.out.println("["+j[0]+"]  ["+ j[1]+"]");
         }
     }*/
 }
